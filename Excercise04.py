@@ -78,6 +78,7 @@ while n != run :
     y = random.randint(-1, 1)
     points.append(x)
     points.append(y)
+    n = n + 1
 
 
 
