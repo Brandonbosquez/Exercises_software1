@@ -53,6 +53,7 @@ user = "python"
 word = "rules"
 print("Please remember the [USERNAME] & [PASSWORD]! You have 5 attempts")
 n = 0
+att = 5
 while n < 5 :
     user_at = input("Please enter your username: ")
     pass_at = input("Please enter your password: ")
@@ -64,9 +65,9 @@ while n < 5 :
     elif user_at == user and pass_at == word :
         print("Welcome")
         break
-if att = 0
+if att == 0 :
     print("ACCESS DENIED")
-Print("Program Ended")
+print("Program Ended")
 
 #6 GENERATING POINTS
 points = []
@@ -79,6 +80,7 @@ while n != run :
     points.append(x)
     points.append(y)
     n = n + 1
+print(points)
 
 
 
