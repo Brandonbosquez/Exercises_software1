@@ -22,6 +22,23 @@ def codex(code):
 code = input("Enter ICAO code: ")
 codex(code)
 
+#Question 2
+
+def typer(code):
+    sql = " Select type, count(*) from airport where iso_country =  '"
+    sql += code + "' group by type ; "
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    response = cursor.fetchall()
+    if cursor.rowcount > 0:
+        for row in response:
+            print(f"{row[0]} : {row[1]}")
+    return
+
+code = input("Enter the Country Code: ")
+print(typer(code))
+
+#Question 3
 
 
 

@@ -10,16 +10,17 @@ connection = mysql.connector.connect(
     password = 'MariaDB123',
     autocommit = True
     )
-def codex(code):
-    sql = "select name, municipality from airport where ident = '"
-    sql += code + "' ; "
+
+def typer(code):
+    sql = " Select type, count(*) from airport where iso_country =  '"
+    sql += code + "' group by type ; "
     cursor = connection.cursor()
     cursor.execute(sql)
     response = cursor.fetchall()
-    if cursor.rowcount > 0 :
-        for row in response :
-            print(f" Airport named: {row[0]} is located in municipality: {row[1]}")
+    if cursor.rowcount > 0:
+        for row in response:
+            print(f"{row[0]} : {row[1]}")
     return
-code= input("What is your Code: ")
 
-codex(code)
+code = input("Enter the Country Code: ")
+print(typer(code))
